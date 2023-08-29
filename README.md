@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+# Ссылка на проектов
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+http://larek.itatmisis.ru
 
-Currently, two official plugins are available:
+## Стек технологий который я использовал
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React - это современная и популярная библиотека для разработки пользовательских интерфейсов. Её компонентный подход позволяет разбить интерфейс на небольшие независимые блоки, что упрощает разработку, тестирование и обслуживание кода. Возможность повторного использования компонентов значительно ускоряет процесс разработки и позволяет нам создавать сложные интерфейсы с минимальными усилиями.
 
-## Expanding the ESLint configuration
+TypeScript:
+TypeScript - это надстройка над JavaScript, предоставляющая статическую типизацию. Это средство повышает надежность кода, позволяет выявить множество ошибок на этапе разработки, а также облегчает сотрудничество между разработчиками. Благодаря строгой типизации мы сможем более уверенно рефакторить код и предотвращать множество потенциальных проблем.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Yup:
+Yup - это библиотека для валидации данных на стороне клиента. Использование Yup позволит нам легко определять и применять правила валидации к формам и данным, обеспечивая более плавный пользовательский опыт и снижая вероятность ошибок ввода.
 
-- Configure the top-level `parserOptions` property like this:
+Formik:
+Formik - это библиотека для управления формами в React-приложениях. Она предоставляет удобные инструменты для обработки состояния, валидации и отправки форм. Использование Formik значительно упрощает процесс создания и управления формами, что является неотъемлемой частью многих приложений.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Axios:
+Axios - это библиотека для выполнения HTTP-запросов в браузере и на сервере. Она предоставляет удобные методы для работы с API, обеспечивая легкость в использовании, обработку ошибок и множество настроек для работы с запросами и ответами.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Reechart:
+Reechart - это библиотека для создания интерактивных и красочных графиков и диаграмм. Интеграция Reechart позволит нам визуализировать данные в более понятной и удобной форме, что особенно важно для проектов, связанных с аналитикой и отображением статистики.
+
+Совокупное использование этих технологий позволит нам создать современное, надежное и удобное в использовании приложение. Стремление к эффективной разработке, высокому качеству кода и удовлетворению потребностей пользователей стали основными критериями при выборе данных технологий.
