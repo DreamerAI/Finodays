@@ -1,7 +1,10 @@
 import axios, { AxiosResponse } from "axios";
 import { TotalAreaChartModel } from "./model/analytics.model";
+import { env } from "../../env";
 
-const API_URL = "http://larek.itatmisis.ru:8000/api/flats/flats/graph";
+const API_URL = `${env.BACK_API_URL}/api/flats/flats/graph`;
+
+console.log(API_URL);
 
 export interface AnalyticsRequest {
   region?: number;

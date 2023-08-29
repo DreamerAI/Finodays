@@ -1,6 +1,7 @@
 import axios from "axios";
+import { env } from "../../env";
 
-const API_URL = "http://larek.itatmisis.ru:8000";
+const API_URL = env.BACK_API_URL;
 
 // Определение интерфейса для данных, отправляемых на API
 interface ApiRequest {

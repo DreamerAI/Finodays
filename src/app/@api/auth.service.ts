@@ -1,7 +1,8 @@
 import axios from "axios";
 import qs from "qs"; // Import the qs library for URL encoding
+import { env } from "../../env";
 
-const API_URL = "http://larek.itatmisis.ru:8000/api/user";
+const API_URL = `${env.BACK_API_URL}/api/user`;
 
 interface LoginRequest {
   username: string;
