@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  max-width: 1200px;
+  margin: auto;
+
+  font-family: 'Proxima Nova Rg', sans-serif;
+}
+
+@layer components {
+  .checkbox {
+    @apply bg-bg-purple border border-border-light hover:bg-checkbox-hover hover:border-border-regular cursor-pointer;
+  }
+
+  #toggle:checked + .group:hover > label {
+    @apply bg-blue-800 text-white border-transparent;
+  }
+}

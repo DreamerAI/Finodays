@@ -1,0 +1,87 @@
+type IData = {
+  id: string,
+  address: string,
+  price: string,
+  liquidityTitle: string,
+  icon: string,
+}[];
+
+export const data: IData = [
+  {
+    id: 'ID: 10123456',
+    address: 'г. Москва, ул. Тверская, д. 15, кв. 35',
+    price: '8,2 млн ₽',
+    liquidityTitle: 'Высокая ликвидность',
+    icon:'high',
+  },
+  {
+    id: 'ID: 20345678',
+    address: 'г. Москва, пр-т Ленина, д. 25, кв. 42',
+    price: '10,5 млн ₽',
+    liquidityTitle: 'Средняя ликвидность',
+    icon:'hammer',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'г. Москва, ул. Новый Арбат, д. 10, кв. 18',
+    price: '6,9 млн ₽',
+    liquidityTitle: 'Высокая ликвидность',
+    icon:'hammer',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'г. Москва, ул. Кутузовский пр-т, д. 50, кв. 21',
+    price: '13,2 млн ₽',
+    liquidityTitle: 'Высокая ликвидность',
+    icon:'down',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'Г. Москва, пр-т Мира, д. 75, кв. 31',
+    price: '9,7 млн ₽',
+    liquidityTitle: 'Низкая ликвидность',
+    icon:'down',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'Г. Москва, ул. Красная Пресня, д. 5, кв. 28',
+    price: '4,5 млн ₽',
+    liquidityTitle: 'Низкая ликвидность',
+    icon:'high',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'Г. Москва, ул. Садовая-Кудринская, д. 15, кв. 39',
+    price: '11,8 млн ₽',
+    liquidityTitle: 'Высокая ликвидность',
+    icon:'high',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'г. Москва, ул. Большая Дорогомиловская, д. 30, кв. 24',
+    price: '5,2 млн ₽',
+    liquidityTitle: 'Средняя ликвидность',
+    icon:'high',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'г. Москва, ул. Красная Пресня, д. 10, кв. 50',
+    price: '12,5 млн ₽',
+    liquidityTitle: 'Низкая ликвидность',
+    icon:'high',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'г. Москва, ул. Покровка, д. 20, кв. 16',
+    price: '7,6 млн ₽',
+    liquidityTitle: 'Низкая ликвидность',
+    icon:'down',
+  },
+  {
+    id: 'ID: 00000001',
+    address: 'г. Москва, ул. Большая Якиманка, д. 5, кв. 27',
+    price: '9,3 млн ₽',
+    liquidityTitle: 'Средняя ликвидность',
+    icon:'hammer',
+  },
+];

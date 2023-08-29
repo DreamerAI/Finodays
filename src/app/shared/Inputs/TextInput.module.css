@@ -1,0 +1,26 @@
+.label {
+  background: rgba(71, 107, 240, 0.08);
+  border: 1px solid rgba(71, 107, 240, 0.4);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.label:hover {
+  border-color: rgba(71, 107, 240, 1);
+  background-color: rgba(71, 107, 240, 0.12);
+}
+
+.label:active {
+  border-color: transparent;
+  background-color: #a4e0fd;
+}
+
+.input[type='checkbox'] {
+  display: none;
+}
+
+.input[type='checkbox']:checked + label {
+  border-color: rgba(71, 107, 240, 1);
+  background-color: rgba(71, 107, 240, 0.6);
+}
