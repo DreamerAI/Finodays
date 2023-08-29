@@ -29,7 +29,7 @@ export const Auth = () => {
     const handleSubmit = async (values: AuthLoginForm) => {
         try {
             const response = await AuthService.login(values);
-            localStorage.setItem("apiKey", response.access_token);
+            localStorage.setItem("token", response.access_token);
             navigate("/cost-estimate");
         } catch (error) {
             console.error(error);
@@ -47,7 +47,7 @@ export const Auth = () => {
                 <div className="py-10 px-10 bg-bg-block flex flex-col gap-3 rounded-main justify-center">
                     <div className="w-80 flex flex-col">
                         <label htmlFor="username" className="mb-2 font-medium">Корпоративная почта</label>
-                        <TextInput name="username" placeholder="Логин" />
+                        <TextInput name="username" placeholder="@gazprombank.ru" />
                         <label htmlFor="password" className="mb-2 font-medium">Пароль</label>
                         <TextInput name="password" placeholder="Пароль" type="password" />
                     </div>

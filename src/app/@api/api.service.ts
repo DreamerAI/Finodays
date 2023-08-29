@@ -34,23 +34,25 @@ interface ApiResponse {
 }
 
 class ApiService {
-  static async getData(): Promise<ApiResponse> {
-    try {
-      const response = await axios.get<ApiResponse>(`${API_URL}/endpoint`);
-      return response.data;
-    } catch (error) {
-      // @ts-ignore
-      throw new Error(error.response?.data?.message || "Ошибка при выполнении запроса");
-    }
-  }
-
   static async getMarketValue(data: ApiRequest): Promise<ApiResponse> {
     try {
-      const response = await axios.post<ApiResponse>(`${API_URL}/api/ml/predict`, data);
+      const token = localStorage.getItem("token");
+      
+      if (token) {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      }
+      
+      const response = await axios.post<ApiResponse>(
+        `${API_URL}/api/ml/predict`,
+        data
+      );
       return response.data;
     } catch (error) {
-      // @ts-ignore
-      throw new Error(error.response?.data?.message || "Ошибка при выполнении запроса");
+      throw new Error(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        error.response?.data?.message || "Ошибка при выполнении запроса"
+      );
     }
   }
 }

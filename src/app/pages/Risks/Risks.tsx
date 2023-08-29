@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { CustomCheckbox } from "../../shared/Inputs/TextInput"
+import { RiskCustomCheckbox } from "../../shared/Inputs/TextInput"
 import { LongCardInfo } from "../../shared/LongCardInfo/LongCardInfo";
 import { SmallCardInfo } from "../../shared/SmallCardInfo/smallInfoCard"
 import { Chart } from "./Chart/Chart.tsx";
@@ -48,17 +48,17 @@ export const Risks = () => {
             <div className="flex items-center mt-5 gap-2 flex-col md:flex-row">
                 <Switcher />
                 <div className='flex gap-2 flex-col w-full md:w-auto md:flex-row'>
-                    <CustomCheckbox
+                    <RiskCustomCheckbox
                         name="highLiquidity"
                         label="с высокой ликвидностью"
                         onChange={() => handleCheckboxChange("Высокая ликвидность")}
                     />
-                    <CustomCheckbox
+                    <RiskCustomCheckbox
                         name="averageLiquidity"
                         label="с средней ликвидностью"
                         onChange={() => handleCheckboxChange("Средняя ликвидность")}
                     />
-                    <CustomCheckbox
+                    <RiskCustomCheckbox
                         name="lowLiquidity"
                         label="с низкой ликвидностью"
                         onChange={() => handleCheckboxChange("Низкая ликвидность")}

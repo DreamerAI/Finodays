@@ -59,8 +59,22 @@ export const SelectInput = ({
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
+export const CustomCheckbox = ({ field, label }) => {
+    return (
+        <>
+            <input {...field} id={field.name} type="checkbox" className={s.input} />
+            <label htmlFor={field.name} className={s.label}>{label}</label>
+        </>
+    );
+};
 
-export const CustomCheckbox = ({ label, onChange, name }) => {
+interface Props {
+    label: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    name: string;
+}
+
+export const RiskCustomCheckbox = ({ label, onChange, name }: Props) => {
     return (
         <>
             <input name="" id={name} type="checkbox" className={s.input} onChange={onChange} />
@@ -68,4 +82,3 @@ export const CustomCheckbox = ({ label, onChange, name }) => {
         </>
     );
 };
-

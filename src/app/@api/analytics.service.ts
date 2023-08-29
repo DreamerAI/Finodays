@@ -17,27 +17,43 @@ export interface AnalyticsResponse {
 class AnalyticsService {
   static async getTotalArea(request: AnalyticsRequest): Promise<AnalyticsResponse> {
     try {
+      const token = localStorage.getItem("token");
+      
+      if (token) {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      }
+      
       const response: AxiosResponse<AnalyticsResponse> = await axios.get(`${API_URL}/price_vs_total_area`, {
         params: request,
       });
       return response.data;
     } catch (error) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      throw new Error(error.response?.data?.message || "Ошибка при выполнении запроса");
+      throw new Error(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        error.response?.data?.message || "Ошибка при выполнении запроса"
+      );
     }
   }
 
   static async getConstructionYear(request: AnalyticsRequest): Promise<AnalyticsResponse> {
     try {
+      const token = localStorage.getItem("token");
+      
+      if (token) {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      }
+      
       const response: AxiosResponse<AnalyticsResponse> = await axios.get(`${API_URL}/price_vs_construction_year`, {
         params: request,
       });
       return response.data;
     } catch (error) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      throw new Error(error.response?.data?.message || "Ошибка при выполнении запроса");
+      throw new Error(
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        error.response?.data?.message || "Ошибка при выполнении запроса"
+      );
     }
   }
 }
