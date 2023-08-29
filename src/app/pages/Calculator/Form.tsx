@@ -36,9 +36,9 @@ export const MyForm = ({ setMarketValue }: MarketValueProps) => {
     const handleSubmit = async (values: FormValues) => {
         try {
             const response = await ApiService.getMarketValue(values);
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             setMarketValue(response)
-            console.log(response);
         } catch (error) {
             console.error(error);
         }

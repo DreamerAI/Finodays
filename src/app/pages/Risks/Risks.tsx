@@ -1,3 +1,5 @@
+
+import { useState } from 'react'
 import { CustomCheckbox } from "../../shared/Inputs/TextInput"
 import { LongCardInfo } from "../../shared/LongCardInfo/LongCardInfo";
 import { SmallCardInfo } from "../../shared/SmallCardInfo/smallInfoCard"
@@ -8,10 +10,16 @@ import { data } from './mock.data.ts';
 
 export const Risks = () => {
 
-    console.log(data);
-    const field = {
-        name: "yard",
-    }
+    const [selectedLiquidity, setSelectedLiquidity] = useState<string[]>([]);
+
+    const handleCheckboxChange = (liquidity: string) => {
+        if ([...selectedLiquidity].includes(liquidity)) {
+            setSelectedLiquidity(selectedLiquidity.filter(item => item !== liquidity));
+        } else {
+            setSelectedLiquidity([...selectedLiquidity, liquidity]);
+        }
+    };
+
 
     return (
         <div className="flex-grow">
@@ -37,22 +45,34 @@ export const Risks = () => {
                 </div>
             </div>
 
-            <div className="flex items-center mt-5 gap-2">
+            <div className="flex items-center mt-5 gap-2 flex-col md:flex-row">
                 <Switcher />
-                <CustomCheckbox field={field} label="с высокой ликвидностью" />
+                <div className='flex gap-2 flex-col w-full md:w-auto md:flex-row'>
+                    <CustomCheckbox
+                        name="highLiquidity"
+                        label="с высокой ликвидностью"
+                        onChange={() => handleCheckboxChange("Высокая ликвидность")}
+                    />
+                    <CustomCheckbox
+                        name="averageLiquidity"
+                        label="с средней ликвидностью"
+                        onChange={() => handleCheckboxChange("Средняя ликвидность")}
+                    />
+                    <CustomCheckbox
+                        name="lowLiquidity"
+                        label="с низкой ликвидностью"
+                        onChange={() => handleCheckboxChange("Низкая ликвидность")}
+                    />
+                </div>
 
-                <CustomCheckbox field={field} label="с средней ликвидностью" />
-
-                <CustomCheckbox field={field} label="с низкой ликвидностью" />
-
-                <CustomCheckbox field={field} label="на торгах" />
             </div>
             <div className="flex flex-col gap-5 mt-6">
-                {data.map((info, index) => {
-                    return (
+                {data
+                    .filter(info => selectedLiquidity.length > 0 ? selectedLiquidity.includes(info.liquidityTitle) : true)
+                    .map((info, index) => (
                         <LongCardInfo key={index} id={info.id} address={info.address} icon={info.icon} price={info.price} liquidityTitle={info.liquidityTitle} />
-                    );
-                })}
+                    ))}
+
             </div>
         </div>
     )

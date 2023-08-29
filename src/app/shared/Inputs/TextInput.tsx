@@ -57,12 +57,15 @@ export const SelectInput = ({
     </div>)
 
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-export const CustomCheckbox = ({ field, label }) => {
+
+export const CustomCheckbox = ({ label, onChange, name }) => {
     return (
         <>
-            <input {...field} id={field.name} type="checkbox" className={s.input} />
-            <label htmlFor={field.name} className={s.label}>{label}</label>
+            <input name="" id={name} type="checkbox" className={s.input} onChange={onChange} />
+            <label htmlFor={name} className={s.label}>{label}</label>
         </>
     );
 };
+

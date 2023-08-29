@@ -29,7 +29,6 @@ export const Auth = () => {
     const handleSubmit = async (values: AuthLoginForm) => {
         try {
             const response = await AuthService.login(values);
-            console.log(response);
             localStorage.setItem("apiKey", response.access_token);
             navigate("/cost-estimate");
         } catch (error) {
