@@ -1,6 +1,11 @@
-export interface AnalyticsModel {
+export interface TotalAreaChartModel {
     x: number;
     y: number;
     id: number;
-    url: string;
+  }[]
+
+  export interface ConstructionYearChartModel {
+    x: number;
+    y: number;
+    id: number;
   }[]

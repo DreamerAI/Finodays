@@ -15,8 +15,8 @@ export const Risks = () => {
 
     return (
         <div className="flex-grow">
-            <div className="flex gap-5 md:flex-row flex-col">
-                <div className="flex-1 flex items-center flex-col gap-5">
+            <div className="flex gap-5 md:flex-row flex-col w-full">
+                <div className="flex-1 flex items-center flex-col gap-5 md:w-4/5">
                     <span className="text-headline text-center px-10 py-6 bg-bg-block rounded-main">Информация о квартирах
                         в залоговом портфеле банка</span>
                     <div className="flex gap-3 flex-grow w-full">
@@ -30,7 +30,7 @@ export const Risks = () => {
                 </div>
 
 
-                <div className="flex-1 flex items-center flex-col px-15 py-6 bg-bg-block justify-center text-center font-semibold">
+                <div className="md:w-1/5 flex-1 flex items-center flex-col px-2 py-6 bg-bg-block justify-center text-center font-semibold">
                     <p className="mt-5 text-2xl px-20">Ликвидность недвижимости в портфеле</p>
                     <Chart />
                     <p className="text-xl">Квартир <span className="text-2xl text-main-purple">301</span> всего</p>
@@ -39,7 +39,13 @@ export const Risks = () => {
 
             <div className="flex items-center mt-5 gap-2">
                 <Switcher />
-                <CustomCheckbox field={field} label="Детский сад рядом" />
+                <CustomCheckbox field={field} label="с высокой ликвидностью" />
+
+                <CustomCheckbox field={field} label="с средней ликвидностью" />
+
+                <CustomCheckbox field={field} label="с низкой ликвидностью" />
+
+                <CustomCheckbox field={field} label="на торгах" />
             </div>
             <div className="flex flex-col gap-5 mt-6">
                 {data.map((info, index) => {

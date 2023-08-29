@@ -20,7 +20,7 @@ export const TextInput = ({
     placeholder,
     type = "text",
 }: TextInputProps) => (
-    <div className="mb-4">
+    <div>
         <Field
             placeholder={placeholder}
             type={type}

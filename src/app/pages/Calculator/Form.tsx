@@ -30,6 +30,9 @@ export interface FormValues {
 
 export const MyForm = ({ setMarketValue }: MarketValueProps) => {
 
+
+
+
     const handleSubmit = async (values: FormValues) => {
         try {
             const response = await ApiService.getMarketValue(values);
@@ -67,7 +70,6 @@ export const MyForm = ({ setMarketValue }: MarketValueProps) => {
 
 
     const validationSchema = Yup.object({
-        // TODO: Добавить валидацию на даты
         сonstructionYear: Yup.number().min(0, 'Число должно быть больше нуля').nullable(),
         roomCnt: Yup.number().min(0, 'Число должно быть больше нуля').nullable(),
         area: Yup.number().min(0, 'Число должно быть больше нуля').nullable(),
@@ -84,8 +86,8 @@ export const MyForm = ({ setMarketValue }: MarketValueProps) => {
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}
             >
-                <Form className="py-8 px-6 bg-bg-block flex flex-col gap-3 rounded-main">
-                    <div>
+                <Form className="py-8 px-6 bg-bg-block flex flex-col gap-3 rounded-main h-full">
+                    <div className="flex flex-col gap-3">
                         <p className="text-text-dark-gray font-semibold mb-3">Данные о доме</p>
                         <TextInput name="address" placeholder="Адрес" />
                         <div className="flex gap-3">
@@ -93,7 +95,7 @@ export const MyForm = ({ setMarketValue }: MarketValueProps) => {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="flex flex-col gap-3">
                         <p className="text-text-dark-gray font-semibold mb-3">Данные о квартире</p>
                         <div className="flex gap-3">
                             <TextInput name="roomCnt" placeholder="Кол-во комнат" type="number" />
@@ -106,7 +108,6 @@ export const MyForm = ({ setMarketValue }: MarketValueProps) => {
                             <TextInput name="ceilingHeight" placeholder="Высота потолков" type="number" />
                         </div>
                         <div className="flex gap-3">
-
                             <SelectInput
                                 name="finishing"
                                 placeholder="Отделка"

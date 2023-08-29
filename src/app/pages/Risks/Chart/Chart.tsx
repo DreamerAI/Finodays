@@ -111,14 +111,14 @@ export const Chart = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <ResponsiveContainer width="100%" height={450}>
+        <ResponsiveContainer width="100%" height={300}>
             <PieChart>
                 <Pie
                     activeIndex={activeIndex}
                     activeShape={renderActiveShape}
                     data={data}
-                    innerRadius={100}
-                    outerRadius={160}
+                    innerRadius={80}
+                    outerRadius={110}
                     dataKey="value"
                     onMouseEnter={(_, index) => setActiveIndex(index)}
                     onMouseLeave={() => setActiveIndex(-1)}
